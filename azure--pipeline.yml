@@ -1,0 +1,11 @@
+trigger:
+  -master
+pool:
+name:Default
+steps:
+-script:echo myfirst azurepipeline for maven project
+displayName:'run one line script'
+-script:mvn clean install
+displayName:'build maven project'
+-script:java -jar target/MyMvnApp-1.0-SNAPSHOT.jar
+displayName:'running jar'
